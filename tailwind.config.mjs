@@ -4,25 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        // === Daemon Core palette ===
-        daemon: {
-          DEFAULT: '#FF5722',   // naranja fuego — acento principal
-          light: '#FF8A65',
-          dark: '#E64A19',
-          glow: 'rgba(255,87,34,0.4)',
-        },
-        cyan: {
-          DEFAULT: '#00E5FF',   // acento tech/secundario
-          light: '#80EAFF',
-          dark: '#00B8D4',
-          glow: 'rgba(0,229,255,0.3)',
-        },
-        void: {
-          DEFAULT: '#0B0C15',   // fondo principal
-          light: '#151725',     // superficie
-          deep: '#05060A',      // fondo profundo
-        },
-        // Minecraft daytime palette (mantenido para compatibilidad visual MC)
+        // === Minecraft daytime palette ===
         sky: {
           light: '#A4D9F7',
           DEFAULT: '#7EC0EE',
@@ -50,18 +32,37 @@ export default {
           dark: '#6B4423',
         },
         cloud: '#FFFFFF',
-        // Legacy compat (hermes -> daemon alias)
+        // Dorado Hermes — acento principal
         hermes: {
-          DEFAULT: '#FF5722',
-          light: '#FF8A65',
-          dark: '#E64A19',
+          DEFAULT: '#F5C542',
+          light: '#FCDC6E',
+          dark: '#C79A1E',
         },
+        // Navy/cream para modo oscuro opcional
         night: {
-          DEFAULT: '#0B0C15',
-          deep: '#05060A',
+          DEFAULT: '#1A1E2E',
+          deep: '#0E1220',
         },
-        cream: '#E8E8ED',
+        cream: '#FAF7F0',
         ink: '#1F2933',
+        // Alias daemon -> hermes para compatibilidad con componentes nuevos
+        daemon: {
+          DEFAULT: '#F5C542',
+          light: '#FCDC6E',
+          dark: '#C79A1E',
+          glow: 'rgba(245,197,66,0.4)',
+        },
+        cyan: {
+          DEFAULT: '#00E5FF',
+          light: '#80EAFF',
+          dark: '#00B8D4',
+          glow: 'rgba(0,229,255,0.3)',
+        },
+        void: {
+          DEFAULT: '#1A1E2E',
+          light: '#252a3d',
+          deep: '#0E1220',
+        },
       },
       fontFamily: {
         display: ['"Press Start 2P"', 'monospace'],
@@ -73,9 +74,9 @@ export default {
         'pixel': '4px 4px 0 0 rgba(0,0,0,0.25)',
         'pixel-lg': '6px 6px 0 0 rgba(0,0,0,0.3)',
         'block': 'inset 0 -4px 0 0 rgba(0,0,0,0.25), inset 0 4px 0 0 rgba(255,255,255,0.25)',
-        'block-daemon': 'inset 0 -4px 0 0 #E64A19, inset 0 4px 0 0 #FF8A65',
+        'block-gold': 'inset 0 -4px 0 0 #C79A1E, inset 0 4px 0 0 #FCDC6E',
         'block-grass': 'inset 0 -4px 0 0 #5A7F3A, inset 0 4px 0 0 #94C95C',
-        'glow-daemon': '0 0 20px rgba(255,87,34,0.3)',
+        'glow-daemon': '0 0 20px rgba(245,197,66,0.3)',
         'glow-cyan': '0 0 20px rgba(0,229,255,0.3)',
       },
       animation: {
@@ -106,8 +107,8 @@ export default {
           '50%': { transform: 'rotate(2deg)' },
         },
         'pulse-daemon': {
-          '0%, 100%': { boxShadow: '0 0 5px rgba(255,87,34,0.2)' },
-          '50%': { boxShadow: '0 0 25px rgba(255,87,34,0.6)' },
+          '0%, 100%': { boxShadow: '0 0 5px rgba(245,197,66,0.2)' },
+          '50%': { boxShadow: '0 0 25px rgba(245,197,66,0.6)' },
         },
         flicker: {
           '0%, 100%': { opacity: '1' },

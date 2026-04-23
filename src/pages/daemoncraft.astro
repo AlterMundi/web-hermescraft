@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/sections/Footer.astro';
+
+const sections = [
+  {
+    tag: 'AlterMundi',
+    title: 'Tecnología comunitaria desde 2012',
+    body: 'AlterMundi es una cooperativa argentina que construye redes comunitarias y herramientas de soberanía digital. Desde los nodos LibreRouter hasta los agentes de IA, todo nace de la misma pregunta: ¿cómo empoderamos a las comunidades con tecnología que no las explota?',
+    img: '/img/altermundi-network.jpg',
+  },
+  {
+    tag: 'AutoResearch',
+    title: 'Investigación autónoma con agentes',
+    body: 'AutoResearch es nuestro framework de investigación asistida por IA. En lugar de buscar manualmente, los agentes recorren papers, foros y repos mientras dormís. Para DaemonCraft significa que el agente aprende técnicas de Minecraft de la comunidad global sin que nadie programe cada comportamiento.',
+    img: '/img/autoresearch.jpg',
+  },
+  {
+    tag: 'Manoria',
+    title: 'El agente que sigue al niño',
+    body: 'Manoria es el corazón pedagógico del sistema. No es un simple tracker: entiende el desarrollo cognitivo del niño, detecta frustración, celebra logros y adapta desafíos en tiempo real. Juega con él, no lo observa desde afuera.',
+    img: '/img/manoria.jpg',
+  },
+  {
+    tag: 'APL',
+    title: 'Agent Portable Layer',
+    body: 'APL es el estándar que estamos empujando para que cualquier agente de IA pueda migrar entre plataformas sin reescribirse. Un agente entrenado en Minecraft debería poder saltar a Roblox, a un simulador educativo o a un mundo VR sin perder su memoria ni personalidad.',
+    img: '/img/apl.jpg',
+  },
+  {
+    tag: 'Hermes + Kimi',
+    title: 'La dupla que lo hace posible',
+    body: 'Hermes es nuestro agente orquestador. Kimi (via Kimi CLI OAuth) es el cerebro de razonamiento que le da capacidad de planificación a largo plazo. Juntos forman un sistema donde Hermes percibe el mundo de Minecraft y Kimi decide qué hacer a continuación, recordando siempre lo que más le importa al jugador.',
+    img: '/img/hermes-kimi.jpg',
+  },
+];
+---
+
+<Layout title="DaemonCraft — Laboratorio de Agentes Autónomos">
+  <main class="bg-sky text-ink">
+    <Nav />
+
+    <!-- Hero técnico -->
+    <section class="relative pt-24 pb-20 overflow-hidden">
+      <div class="absolute inset-0 opacity-10 bg-grass-pattern"></div>
+      <div class="container-narrow relative">
+        <div class="inline-flex items-center gap-2 bg-cream/90 border-2 border-ink/20 px-3 py-1.5 shadow-pixel mb-6">
+          <span class="font-mono text-[10px] uppercase tracking-widest text-ink">
+            Laboratorio Abierto
+          </span>
+        </div>
+        <h1 class="h-display text-mc text-cream mb-6 max-w-3xl">
+          Esto es <span class="text-hermes">DaemonCraft</span> por dentro.
+        </h1>
+        <p class="font-sans text-lg md:text-xl text-ink max-w-2xl bg-cream/90 border-2 border-ink/20 p-5 shadow-pixel">
+          Un ecosistema de agentes autónomos que nace de <strong>AlterMundi</strong>, se nutre de
+          <strong>AutoResearch</strong>, se conecta con <strong>Manoria</strong> y se extiende a través del
+          <strong>Agent Portable Layer</strong>. Impulsado por <strong>Hermes</strong> y <strong>Kimi</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Secciones de contenido -->
+    {sections.map((s, i) => (
+      <section class={`py-16 md:py-24 ${i % 2 === 1 ? 'bg-sky-deep/20' : ''}`}>
+        <div class="container-narrow">
+          <div class={`grid md:grid-cols-2 gap-10 md:gap-16 items-center ${i % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+            <div class={i % 2 === 1 ? 'md:order-2' : ''}>
+              <span class="font-mono text-[10px] uppercase tracking-widest text-hermes mb-3 block">{s.tag}</span>
+              <h2 class="h-display text-3xl md:text-4xl text-cream mb-5">{s.title}</h2>
+              <p class="font-sans text-lg text-ink leading-relaxed bg-cream/90 border-2 border-ink/20 p-5 shadow-pixel">
+                {s.body}
+              </p>
+            </div>
+            <div class={i % 2 === 1 ? 'md:order-1' : ''}>
+              <div class="aspect-video bg-cream border-4 border-ink/20 shadow-pixel-lg flex items-center justify-center overflow-hidden">
+                <div class="text-center p-8">
+                  <div class="w-20 h-20 mx-auto mb-4 bg-hermes border-4 border-hermes-dark flex items-center justify-center shadow-pixel">
+                    <span class="font-display text-2xl text-ink">{s.tag[0]}</span>
+                  </div>
+                  <p class="font-mono text-xs text-ink/60">{s.tag}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <!-- CTA final -->
+    <section class="py-20 bg-grass-pattern">
+      <div class="container-narrow text-center">
+        <h2 class="h-display text-3xl text-cream mb-6">
+          Querés sumarte al <span class="text-hermes">swarm</span>?
+        </h2>
+        <p class="font-sans text-lg text-ink max-w-xl mx-auto mb-8 bg-cream/90 border-2 border-ink/20 p-5 shadow-pixel">
+          Buscamos devs, investigadores, padres gamers y curiosos. El código del agente es open source. La infraestructura es comunitaria. La dirección la elegimos entre todxs.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="mailto:nicoechaniz@altermundi.net" class="btn-mc btn-mc-gold">
+            Escribinos →
+          </a>
+          <a href="https://altermundi.net" target="_blank" class="btn-mc btn-mc-wood">
+            AlterMundi
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+</Layout>

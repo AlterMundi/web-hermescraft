@@ -90,7 +90,7 @@ function statusText(s) {
         <div class="flex items-center gap-3">
           <span class="text-2xl">👻</span>
           <div>
-            <h1 class="font-display text-sm tracking-wider text-daemon">DAEMONCRAFT</h1>
+            <h1 class="font-display text-sm tracking-wider text-hermes">DAEMONCRAFT</h1>
             <p class="font-mono text-[10px] text-cream/50">Dashboard de Agentes · Fase 0 · Semana 1</p>
           </div>
         </div>
@@ -104,15 +104,15 @@ function statusText(s) {
     <main class="container-narrow py-8 space-y-8">
       <!-- System & Bot Overview -->
       <section class="grid md:grid-cols-2 gap-4">
-        <div class="mc-card bg-void-light border-daemon/30">
+        <div class="mc-card bg-void-light border-hermes/30">
           <div class="flex items-center gap-2 mb-3">
             <span class="text-xl">🚀</span>
-            <h2 class="font-display text-xs text-daemon tracking-wider">DAEMON · Sistema</h2>
+            <h2 class="font-display text-xs text-hermes tracking-wider">DAEMON · Sistema</h2>
           </div>
           <p class="text-sm text-cream/80 mb-3">{systemDaemon.doing}</p>
           <div class="flex flex-wrap gap-1">
             {systemDaemon.components.map(c => (
-              <span class="font-mono text-[9px] px-2 py-1 bg-daemon/10 text-daemon border border-daemon/20">{c}</span>
+              <span class="font-mono text-[9px] px-2 py-1 bg-hermes/10 text-hermes border border-hermes/20">{c}</span>
             ))}
           </div>
         </div>
@@ -180,11 +180,11 @@ function statusText(s) {
         <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
           {metrics.map(m => (
             <div class="mc-card text-center py-4">
-              <div class="font-display text-2xl text-daemon">{m.value}</div>
+              <div class="font-display text-2xl text-hermes">{m.value}</div>
               <div class="font-mono text-[9px] text-cream/40 uppercase mt-1">{m.label}</div>
               <div class="font-mono text-[9px] text-cream/30 mt-0.5">meta: {m.target}</div>
               <div class="w-full bg-void h-1 mt-2 rounded-full overflow-hidden">
-                <div class="bg-daemon h-full rounded-full transition-all" style={`width: ${Math.min(100, (m.value / m.target) * 100)}%`}></div>
+                <div class="bg-hermes h-full rounded-full transition-all" style={`width: ${Math.min(100, (m.value / m.target) * 100)}%`}></div>
               </div>
             </div>
           ))}
@@ -192,10 +192,10 @@ function statusText(s) {
       </section>
 
       <!-- Quick Actions -->
-      <section class="mc-card bg-daemon/5 border-daemon/20">
-        <h2 class="font-display text-xs tracking-wider text-daemon mb-3">⚡ Acciones Rápidas</h2>
+      <section class="mc-card bg-hermes/5 border-hermes/20">
+        <h2 class="font-display text-xs tracking-wider text-hermes mb-3">⚡ Acciones Rápidas</h2>
         <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-3">
-          <a href="/DeamonCraft-web/" class="btn-mc btn-mc-daemon text-center text-xs justify-center">🌐 Web</a>
+          <a href="/DeamonCraft-web/" class="btn-mc btn-mc-gold text-center text-xs justify-center">🌐 Web</a>
           <a href="https://github.com/AlterMundi/DeamonCraft-web" class="btn-mc bg-void text-cream border-cream/20 text-center text-xs justify-center">??️ Repo</a>
           <a href="https://discord.com/channels/1496673192922710096/1496673192922710099" class="btn-mc bg-[#5865F2] text-cream border-[#5865F2] text-center text-xs justify-center">💬 Discord</a>
           <a href="mailto:nicoechaniz@daemoncraft.ai" class="btn-mc bg-void text-cream border-cream/20 text-center text-xs justify-center">✉️ Contacto</a>

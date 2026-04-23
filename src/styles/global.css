@@ -15,12 +15,13 @@
   --grass: #7CAC50;
   --grass-dark: #5A7F3A;
   --dirt: #8B5A3C;
-  --daemon: #FF5722;
-  --daemon-light: #FF8A65;
-  --daemon-dark: #E64A19;
-  --cyan: #00E5FF;
-  --void: #0B0C15;
-  --void-light: #151725;
+  --hermes: #F5C542;
+  --hermes-light: #FCDC6E;
+  --hermes-dark: #C79A1E;
+  --daemon: #F5C542;
+  --daemon-light: #FCDC6E;
+  --daemon-dark: #C79A1E;
+  --night: #1A1E2E;
 }
 
 html {
@@ -28,7 +29,7 @@ html {
 }
 
 body {
-  @apply bg-void text-cream font-sans antialiased;
+  @apply bg-sky text-ink font-sans antialiased;
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
@@ -81,146 +82,146 @@ body > * img, .pixel-img {
 
   /* ─── Cards estilo Minecraft panel ─── */
   .mc-card {
-    @apply relative bg-void-light border-4 p-5 md:p-6;
-    border-color: rgba(21, 23, 37, 0.9);
+    @apply relative bg-cream border-4 p-5 md:p-6;
+    border-color: #8A8A8A;
     box-shadow:
-      inset 0 -4px 0 0 rgba(0,0,0,0.3),
-      inset 0 4px 0 0 rgba(255,255,255,0.05),
-      4px 4px 0 0 rgba(0,0,0,0.4);
+      inset 0 -6px 0 0 rgba(0,0,0,0.25),
+      inset 0 6px 0 0 rgba(255,255,255,0.35),
+      4px 4px 0 0 rgba(0,0,0,0.2);
   }
 
-  .mc-panel {
-    @apply relative text-cream border-4 border-void-deep p-6 md:p-8 backdrop-blur-sm;
-    background-color: rgba(11, 12, 21, 0.9);
-    box-shadow:
-      inset 0 -4px 0 0 rgba(0,0,0,0.5),
-      inset 0 4px 0 0 rgba(255,255,255,0.05),
-      6px 6px 0 0 rgba(0,0,0,0.4);
+  .mc-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: rgba(255,255,255,0.25);
   }
 
   /* ─── Botones Minecraft ─── */
   .btn-mc {
-    @apply inline-flex items-center gap-2 px-5 py-3 font-display text-xs uppercase tracking-wider;
-    @apply bg-grass text-cream border-2 border-grass-dark;
-    box-shadow:
-      inset 0 3px 0 0 rgba(255,255,255,0.3),
-      inset 0 -3px 0 0 rgba(0,0,0,0.3),
-      4px 4px 0 0 rgba(0,0,0,0.25);
-    transition: transform 100ms, box-shadow 100ms;
-    text-shadow: 2px 2px 0 rgba(0,0,0,0.5);
-  }
-  .btn-mc:hover {
-    transform: translate(-2px, -2px);
-    box-shadow:
-      inset 0 3px 0 0 rgba(255,255,255,0.35),
-      inset 0 -3px 0 0 rgba(0,0,0,0.3),
-      6px 6px 0 0 rgba(0,0,0,0.25);
-  }
-  .btn-mc:active {
-    transform: translate(2px, 2px);
-    box-shadow:
-      inset 0 3px 0 0 rgba(255,255,255,0.3),
-      inset 0 -3px 0 0 rgba(0,0,0,0.3),
-      0 0 0 0 rgba(0,0,0,0.25);
+    @apply inline-flex items-center gap-2 px-4 py-3 font-display text-[11px] md:text-xs uppercase tracking-widest border-4 transition-transform active:translate-y-0.5;
   }
 
-  .btn-mc-daemon {
-    @apply bg-daemon text-cream border-daemon-dark;
-    text-shadow: 2px 2px 0 rgba(0,0,0,0.4);
-    box-shadow:
-      inset 0 3px 0 0 rgba(255,255,255,0.35),
-      inset 0 -3px 0 0 rgba(0,0,0,0.3),
-      4px 4px 0 0 rgba(0,0,0,0.25),
-      0 0 15px rgba(255,87,34,0.3);
+  .btn-mc-gold {
+    @apply bg-hermes text-ink border-hermes-dark;
+    box-shadow: inset 0 -4px 0 0 #C79A1E, inset 0 4px 0 0 #FCDC6E, 4px 4px 0 0 rgba(0,0,0,0.25);
   }
-  .btn-mc-daemon:hover {
-    box-shadow:
-      inset 0 3px 0 0 rgba(255,255,255,0.4),
-      inset 0 -3px 0 0 rgba(0,0,0,0.3),
-      6px 6px 0 0 rgba(0,0,0,0.25),
-      0 0 25px rgba(255,87,34,0.5);
-  }
-
-  .btn-mc-cyan {
-    @apply bg-cyan text-void border-cyan-dark;
-    text-shadow: none;
-    box-shadow:
-      inset 0 3px 0 0 rgba(255,255,255,0.5),
-      inset 0 -3px 0 0 rgba(0,0,0,0.2),
-      4px 4px 0 0 rgba(0,0,0,0.25),
-      0 0 15px rgba(0,229,255,0.3);
-  }
-  .btn-mc-cyan:hover {
-    box-shadow:
-      inset 0 3px 0 0 rgba(255,255,255,0.55),
-      inset 0 -3px 0 0 rgba(0,0,0,0.2),
-      6px 6px 0 0 rgba(0,0,0,0.25),
-      0 0 25px rgba(0,229,255,0.5);
+  .btn-mc-gold:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
   }
 
   .btn-mc-wood {
     @apply bg-wood text-cream border-wood-dark;
+    box-shadow: inset 0 -4px 0 0 #6B4423, inset 0 4px 0 0 #C8A165, 4px 4px 0 0 rgba(0,0,0,0.25);
+  }
+  .btn-mc-wood:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
   }
 
-  /* ─── Texto con outline estilo Minecraft ─── */
-  .text-mc {
-    text-shadow:
-      2px 0 0 #0B0C15, -2px 0 0 #0B0C15,
-      0 2px 0 #0B0C15, 0 -2px 0 #0B0C15,
-      2px 2px 0 #0B0C15, -2px -2px 0 #0B0C15,
-      2px -2px 0 #0B0C15, -2px 2px 0 #0B0C15,
-      3px 3px 0 rgba(0,0,0,0.4);
+  .btn-mc-grass {
+    @apply bg-grass text-cream border-grass-dark;
+    box-shadow: inset 0 -4px 0 0 #5A7F3A, inset 0 4px 0 0 #94C95C, 4px 4px 0 0 rgba(0,0,0,0.25);
+  }
+  .btn-mc-grass:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
   }
 
-  /* ─── Etiqueta flotante tipo entity ─── */
-  .entity-tag {
-    @apply px-2 py-0.5 bg-void/90 text-daemon font-mono text-[11px] border border-daemon/30;
+  .btn-mc-stone {
+    @apply bg-stone text-cream border-stone-dark;
+    box-shadow: inset 0 -4px 0 0 #555555, inset 0 4px 0 0 #B5B5B5, 4px 4px 0 0 rgba(0,0,0,0.25);
   }
 
-  /* ─── Nube pixelada ─── */
-  .pixel-cloud {
-    background:
-      radial-gradient(circle at 25% 50%, #fff 30%, transparent 32%),
-      radial-gradient(circle at 75% 50%, #fff 30%, transparent 32%),
-      radial-gradient(circle at 50% 40%, #fff 40%, transparent 42%);
+  .btn-mc-gold {
+    @apply bg-hermes text-ink border-hermes-dark;
+    box-shadow: inset 0 -4px 0 0 #C79A1E, inset 0 4px 0 0 #FCDC6E, 4px 4px 0 0 rgba(0,0,0,0.25);
+  }
+  .btn-mc-gold:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
   }
 
-  /* ─── Efectos Daemon ─── */
+  /* ─── Block card (panel grande) ─── */
+  .block-card {
+    @apply bg-cream border-4 p-5 md:p-6;
+    border-color: #8A8A8A;
+    box-shadow:
+      inset 0 -6px 0 0 rgba(0,0,0,0.2),
+      inset 0 6px 0 0 rgba(255,255,255,0.3),
+      4px 4px 0 0 rgba(0,0,0,0.15);
+  }
+
+  /* ─── Badge inline ─── */
+  .mc-badge {
+    @apply px-2 py-0.5 bg-cream/90 text-ink font-mono text-[11px] border border-ink/20;
+    box-shadow: inset 0 -2px 0 0 rgba(0,0,0,0.15);
+  }
+
+  /* ─── Texturas de fondo ─── */
+  .bg-grass-pattern {
+    background-color: #7CAC50;
+    background-image:
+      linear-gradient(0deg, rgba(0,0,0,0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+
+  .bg-dirt-pattern {
+    background-color: #8B5A3C;
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.15'/%3E%3C/svg%3E");
+  }
+
+  .bg-stone-pattern {
+    background-color: #8A8A8A;
+    background-image:
+      linear-gradient(45deg, rgba(0,0,0,0.08) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(0,0,0,0.08) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(0,0,0,0.08) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(0,0,0,0.08) 75%);
+    background-size: 8px 8px;
+    background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+  }
+
+  /* ─── Glow dorado ─── */
   .daemon-glow {
-    box-shadow: 0 0 20px rgba(255,87,34,0.3);
+    box-shadow: 0 0 30px rgba(245,197,66,0.3);
   }
-  .cyan-glow {
-    box-shadow: 0 0 20px rgba(0,229,255,0.3);
+
+  .text-hermes-glow {
+    text-shadow: 0 0 20px rgba(245,197,66,0.5);
   }
-  .text-daemon-glow {
-    text-shadow: 0 0 10px rgba(255,87,34,0.5);
-  }
-  .text-cyan-glow {
-    text-shadow: 0 0 10px rgba(0,229,255,0.5);
+
+  /* ─── Animaciones reduced-motion ─── */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+/* ─── Scrollbar estilo MC ─── */
+::-webkit-scrollbar {
+  width: 12px;
 }
-
-::selection {
-  background: var(--daemon);
-  color: var(--void);
+::-webkit-scrollbar-track {
+  background: #8B5A3C;
+  border-left: 2px solid #6B4423;
 }
-
-::-webkit-scrollbar { width: 12px; }
-::-webkit-scrollbar-track { background: var(--void); }
 ::-webkit-scrollbar-thumb {
-  background: var(--daemon);
-  border: 2px solid var(--void);
+  background: #7CAC50;
+  border: 2px solid #5A7F3A;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--daemon-dark);
+  background: #94C95C;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: var(--hermes);
+  color: var(--ink);
 }

@@ -35,7 +35,7 @@ const sabe = [
   <div class="relative container-narrow">
     <div class="max-w-3xl mb-16 md:mb-20">
       <span class="h-mini">02 / El Agente</span>
-      <div class="w-12 h-0.5 bg-daemon mt-3 mb-6"></div>
+      <div class="w-12 h-0.5 bg-hermes mt-3 mb-6"></div>
       <h2 class="h-display mb-6">Cómo funciona Daemon</h2>
       <p class="text-cream/70 text-lg leading-relaxed">
         Tres capas. Para los niños y los padres, ninguna importa técnicamente — lo que importa es la experiencia.
@@ -46,8 +46,8 @@ const sabe = [
     <!-- Capas -->
     <div class="grid md:grid-cols-3 gap-6 mb-20">
       {capas.map((c, i) => (
-        <div class="block-card group hover:border-daemon/50 transition-colors">
-          <div class="font-display text-xs text-daemon/60 mb-4">0{i + 1}</div>
+        <div class="block-card group hover:border-hermes/50 transition-colors">
+          <div class="font-display text-xs text-hermes/60 mb-4">0{i + 1}</div>
           <h3 class="font-serif text-2xl text-cream mb-1">{c.name}</h3>
           <div class="font-mono text-[10px] uppercase tracking-widest text-teal-digital mb-4">{c.tech}</div>
           <p class="text-cream/70 text-sm leading-relaxed">{c.desc}</p>
@@ -66,10 +66,10 @@ const sabe = [
 
     <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
       {sabe.map((s) => (
-        <div class="p-5 border-l-2 border-daemon/40 bg-navy-700/30 hover:bg-navy-700/60 hover:border-daemon transition-all">
+        <div class="p-5 border-l-2 border-hermes/40 bg-navy-700/30 hover:bg-navy-700/60 hover:border-hermes transition-all">
           <div class="flex items-center gap-2 mb-2">
             <span class="block-icon"></span>
-            <span class="font-mono text-xs uppercase tracking-wider text-daemon">{s.label}</span>
+            <span class="font-mono text-xs uppercase tracking-wider text-hermes">{s.label}</span>
           </div>
           <p class="text-sm text-cream/70">{s.desc}</p>
         </div>
