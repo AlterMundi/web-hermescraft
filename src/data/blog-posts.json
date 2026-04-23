@@ -1,5 +1,14 @@
 [
   {
+    "title": "Test de publicación automática",
+    "date": "2026-04-23",
+    "tag": "Bot",
+    "excerpt": "Este es un post de prueba generado automáticamente para verificar que la integración entre el bot de Telegram y GitHub funciona correctamente.",
+    "slug": "test-de-publicacion-automatica",
+    "highlight": false,
+    "content": "<p>Este es un post de prueba generado automáticamente para verificar que la integración entre el bot de Telegram y GitHub funciona correctamente.</p>"
+  },
+  {
     "title": "Invocamos algo nuevo",
     "date": "2026-04-22",
     "tag": "Anuncio",
