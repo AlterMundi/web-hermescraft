@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const posts = [
+  {
+    title: 'Invocamos algo nuevo',
+    date: '2026-04-22',
+    tag: 'Anuncio',
+    excerpt: 'DaemonCraft: un agente de IA autónomo que vive en tu servidor de Minecraft. Juega, protege, aprende de vos y reporta a los tuyos.',
+    slug: 'invocamos-algo-nuevo',
+  },
+  {
+    title: '30 segundos para tener tu Daemon',
+    date: '2026-04-23',
+    tag: 'Demo',
+    excerpt: 'Eso es lo que tarda tu Daemon en aparecer al lado tuyo en Minecraft. Sin mods. Sin configs raras. Solo IP + nombre.',
+    slug: '30-segundos-daemon',
+  },
+  {
+    title: 'Un mensajero que te devuelve el hilo',
+    date: '2026-04-24',
+    tag: 'Padres',
+    excerpt: 'El mayor miedo de un padre no es que el juego sea malo. Es no saber qué está pasando adentro.',
+    slug: 'mensajero-padres',
+  },
+  {
+    title: 'Cómo se ve un agente de IA jugando Minecraft',
+    date: '2026-04-25',
+    tag: 'Técnico',
+    excerpt: 'Percepción → Razonamiento → Acción → Memoria. No es magia. Es arquitectura.',
+    slug: 'agente-ia-minecraft',
+  },
+];
+---
+
+<Layout title="DaemonCraft Blog">
+  <div class="min-h-screen bg-void text-cream font-sans">
+    <header class="border-b border-void-light bg-void-light/50 backdrop-blur">
+      <div class="container-narrow py-8 text-center">
+        <span class="font-mono text-[10px] uppercase tracking-widest text-daemon">Blog</span>
+        <h1 class="h-display text-cream mt-2">
+          Pensamientos de la <span class="text-daemon">Primera Camada</span>
+        </h1>
+        <p class="font-sans text-cream/60 mt-3 max-w-xl mx-auto">
+          Construimos en público. Compartimos lo que aprendemos, lo que falla, y lo que viene.
+        </p>
+      </div>
+    </header>
+
+    <main class="container-narrow py-12">
+      <div class="space-y-6">
+        {posts.map(p => (
+          <article class="mc-card hover:border-daemon/40 transition-colors group cursor-pointer">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 bg-daemon/10 text-daemon border border-daemon/20">
+                {p.tag}
+              </span>
+              <span class="font-mono text-[10px] text-cream/40">{p.date}</span>
+            </div>
+            <h2 class="font-serif font-bold text-xl text-cream group-hover:text-daemon transition-colors">
+              {p.title}
+            </h2>
+            <p class="text-sm text-cream/60 mt-2 leading-relaxed">{p.excerpt}</p>
+            <div class="mt-3 font-mono text-[10px] text-daemon/70 group-hover:text-daemon">
+              Leer más →
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="font-mono text-xs text-cream/40">
+          Suscribite vía Telegram: <span class="text-daemon">@hermesdaemoncraft_bot</span>
+        </p>
+      </div>
+    </main>
+  </div>
+</Layout>

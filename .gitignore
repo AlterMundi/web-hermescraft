@@ -10,3 +10,6 @@ dist/
 HermesCraft_Brand_Narrative.pdf
 HermesCraft_Investor_Deck*.pdf
 *.pdf
+bot-hermes.py
+.env
+.venv/
